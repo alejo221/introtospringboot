@@ -4,6 +4,7 @@ import com.springlearning.intro.dto.CategoryDTO;
 import com.springlearning.intro.entity.Category;
 import com.springlearning.intro.service.category.CategoryService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -43,7 +44,7 @@ public class CategoryController {
      * 3. Crear una nueva categoría.
      */
     @PostMapping
-    public CategoryDTO createCategory(@RequestBody CategoryDTO category) {
+    public CategoryDTO createCategory(@Validated @RequestBody CategoryDTO category) {
         return categoryService.save(category);
     }
 

@@ -1,7 +1,10 @@
 package com.springlearning.intro.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * DTO para representar la información de Category
@@ -10,6 +13,8 @@ import java.util.List;
 public class CategoryDTO {
 
     private Long id;
+
+    @NotBlank(message = "El nombre de la categoría no puede estar vacío")
     private String name;
 
     // Para simplificar, podríamos mostrar la lista de productos
